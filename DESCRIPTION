@@ -21,15 +21,15 @@ Suggests:
     roxygen2
 License: GPL (>=3)
 Collate:
+    'base.patterns.R'
     'conversion.R'
+    'family.R'
     'find-utils.R'
     'finders.R'
-    'family.R'
     'functional.R'
     'lint.R'
-    'base.patterns.R'
     'pattern-utils.R'
-    'styles.assignment.R'
-    'styles.performance.R'
     'styles.spacing.R'
+    'styles.performance.R'
+    'styles.assignment.R'
     'lint.patterns.R'
