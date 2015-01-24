@@ -231,3 +231,24 @@ spacing.twobeforecomments <- {list(
                           , line2 = c(4, 5)
                           ,  col2 = c(2, 3) )}
 )}
+
+
+#' @rdname stylechecks
+#' @export
+spacing.nobracketspace <- {list(
+    pattern = '(\\(\\s)|(\\s\\))'
+  , message = "no space after `(` and before `)`"
+  , exclude.region = c("find_comment", "find_string")
+)}
+.testinfo.spacing.nobracketspace <- {list(
+    lines = c( 'a( 1)'                   #  Bad
+             , 'a(1)'                    #  ok
+             , 'a(1 )'                   #  Bad
+             , 'print("( )")'            #  ok
+             , '# ( )'                   #  ok
+             )
+  , results = data.frame( line1 = c(1, 3)
+                        ,  col1 = c(2, 4)
+                        , line2 = c(1, 3)
+                        ,  col2 = c(3, 5) )
+)}

@@ -36,6 +36,7 @@ lint.style <- list(
   , spacing.spacearoundequals
   , spacing.indentation.notabs
   , spacing.linelength.80
+  , spacing.nobracketspace
   , styles.assignment.noeq
   , styles.assignment.norightassign
   , styles.assignment.notinfcall
