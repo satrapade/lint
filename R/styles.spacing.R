@@ -252,3 +252,26 @@ spacing.nobracketspace <- {list(
                         , line2 = c(1, 3)
                         ,  col2 = c(3, 5) )
 )}
+
+#' @rdname stylechecks
+#' @export
+spacing.nosquarebracketspace <- {list(
+    pattern = '(\\[\\s)|([^,\\s]\\s+\\])|(^\\s+\\])'
+  , message = "no space after `[` and before `]`"
+  , exclude.region = c("find_comment", "find_string")
+)}
+.testinfo.spacing.nosquarebracketspace <- {list(
+    lines = c( 'a[ 1]'                   #  Bad
+             , 'a[1]'                    #  ok
+             , 'a[1 ]'                   #  Bad
+             , 'print("[ ]")'            #  ok
+             , '# [ ]'                   #  ok
+             , 'a[1, ]'                  #  ok
+             , 'a[1'                     #  Bad
+             , ' ]'                      #  Bad
+             )
+  , results = data.frame( line1 = c(1, 3, 8)
+                        ,  col1 = c(2, 3, 1)
+                        , line2 = c(1, 3, 8)
+                        ,  col2 = c(3, 5, 2) )
+)}
